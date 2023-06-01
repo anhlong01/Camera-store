@@ -1,0 +1,18 @@
+.cart-close {
+    font-size: 2rem;
+    background: transparent;
+    border-color: transparent;
+    color: red;
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+    cursor: pointer;
+    transition:  var(--transition);
+  }
+
+.cart-items{
+  max-height: 20rem;
+  overflow: scroll;
+}
+
+ 

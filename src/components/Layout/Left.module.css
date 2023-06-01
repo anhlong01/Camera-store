@@ -1,0 +1,30 @@
+.company-btn{
+    display: block;
+    margin: 0.25em 0;
+    padding: 0.25rem;
+    text-transform: capitalize;
+    background: transparent;
+    border-color: transparent;
+    letter-spacing: 0.1rem;
+    color: hsl(210, 22%, 49%);
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.price{
+        display: block;
+        margin: 0.25em 0;
+        padding: 0.25rem;
+        text-transform: capitalize;
+        background: transparent;
+        border-color: transparent;
+        letter-spacing: 0.1rem;
+        color: hsl(210, 22%, 49%);
+        transition: all 0.3s linear;
+    
+}
+
+
+
+
+

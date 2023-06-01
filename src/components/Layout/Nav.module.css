@@ -1,0 +1,33 @@
+.cart{
+	display: inline ;
+	
+}
+
+/* .badge {
+	background-color: #b94517 ;
+	padding: 3px 3px;
+	border-radius: 25px;
+	margin-left: 1rem;
+	font-weight: bold;
+  } */
+
+.badge {
+    position: relative;
+    background-color: #b94517 ;
+    top: -7px;
+    left: -5px;
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 25rem;
+    margin-left: unset;
+}
+
+.cart i{
+    font-size: x-large;
+}
