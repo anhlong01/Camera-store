@@ -5,21 +5,28 @@ import { useEffect, useState } from "react"
 
 const Main = ()=>{
     const products = useProducts();
-    const [data, setState] = useState(products);
-    useEffect(()=>{setState(products)},[products]);
+    const [data, setData] = useState(products);
+    useEffect(()=>{setData(products)},[products]);
+
+    const search = (value)=>{
+        const result = products.filter((product)=>{
+            return product.title.toLowerCase().includes(value);
+        })
+        setData(result);
+    }
 
     const filterPrice = (price)=>{
-        const result = products.filter((curData)=>{
-            return curData.price <= price*1000000;
+        const result = products.filter((product)=>{
+            return product.price <= price*1000000;
         });
-        setState(result);
+        setData(result);
     }
     
     const filterCategory = (category)=>{
-        const result = products.filter((curData)=>{
-            return curData.category === category;
+        const result = products.filter((product)=>{
+            return product.category === category;
         });
-        setState(result);      
+        setData(result);      
     }
 
  
@@ -27,6 +34,8 @@ const Main = ()=>{
     return(
         <div className="row  my-4 mx-2">
         <Left 
+        onSearch = {search}
+        showAll = {() => setData(products)}
         filterCom ={() => filterCategory('computer')}
         filterCam ={() => filterCategory('camera')}
         onSlider = {filterPrice}

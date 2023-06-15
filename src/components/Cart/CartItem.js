@@ -13,7 +13,7 @@
                  {nf.format(props.price)}đ
                 </p>
                 <button className={classes["cart-item-remove-btn"]} onClick={props.onDelete} >
-                remove
+                Xóa khỏi giỏ
                 </button>
             </div>
             <div>
