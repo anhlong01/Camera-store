@@ -1,3 +1,8 @@
+Dự án cửa hàng máy tính và camera.
+
+Các chức năng: đọc, thêm, sửa, xóa sản phẩm, thêm sản phẩm vào giỏ hàng.
+
+Sử dụng CSDL Firebase
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
