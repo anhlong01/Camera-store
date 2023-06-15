@@ -48,7 +48,7 @@
                             value={value}
                             max={100}
                             />
-                            <p className={classes.price}>Value: {nf.format(value*1000000)}đ  </p> 
+                            <p className={classes.price}>Giá: {nf.format(value*1000000)}đ  </p> 
                         </article>
                     </nav>
                     

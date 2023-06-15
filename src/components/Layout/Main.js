@@ -1,24 +1,29 @@
 import Left from "./Left"
 import Content from "./Content"
-import Categories from "../store/Categories"
-import { useState } from "react"
+import useProducts from "../store/useProducts"
+import { useEffect, useState } from "react"
 
 const Main = ()=>{
-    const[data, setState] = useState(Categories);
+    const products = useProducts();
+    const [data, setState] = useState(products);
+    useEffect(()=>{setState(products)},[products]);
+
+    const filterPrice = (price)=>{
+        const result = products.filter((curData)=>{
+            return curData.price <= price*1000000;
+        });
+        setState(result);
+    }
+    
     const filterCategory = (category)=>{
-        const result = Categories.filter((curData)=>{
+        const result = products.filter((curData)=>{
             return curData.category === category;
         });
         setState(result);      
     }
 
-    const filterPrice = (price)=>{
-        const result = Categories.filter((curData)=>{
-            return curData.price <= price*1000000;
-        });
-        setState(result);
-    }
-
+ 
+    // console.log(data);
     return(
         <div className="row  my-4 mx-2">
         <Left 

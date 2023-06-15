@@ -31,3 +31,7 @@
 .cart i{
     font-size: x-large;
 }
+
+li{
+  cursor: pointer;
+}

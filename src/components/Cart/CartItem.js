@@ -1,18 +1,18 @@
  import classes from "./CartItem.module.css";
 
  const CartItem = (props) =>{
-    
+    var nf = new Intl.NumberFormat();
     return(
         <article className={classes['cart-item']}>
-             <img src={props.img} className={classes['cart-item-img']} alt={props.name} />
+             <img src={props.image} className={classes['cart-item-img']} alt={props.name} />
             <div>
-                <h4 className={classes["cart-item-name"]}>
+                <h5 className={classes["cart-item-name"]}>
                 {props.name}
-                </h4>
+                </h5>
                 <p className={classes["cart-item-price"]}>
-                {props.price}
+                 {nf.format(props.price)}đ
                 </p>
-                <button className={classes["cart-item-remove-btn"]} >
+                <button className={classes["cart-item-remove-btn"]} onClick={props.onDelete} >
                 remove
                 </button>
             </div>

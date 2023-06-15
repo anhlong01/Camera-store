@@ -14,17 +14,21 @@ const Cart = (props) =>{
   const removeItemHandler = (id) => {
     cartCtx.removeItem(id)
   };
+  const deleteItemHandler = (id)=>{
+    cartCtx.deleteItem(id)
+  }
   const totalAmount = nf.format(cartCtx.totalAmount);
 
   const cartItems = cartCtx.items.map((item)=>
       <CartItem 
-      img={item.img} 
-      name={item.title} 
+      image={item.image} 
+      name={item.name} 
       price={item.price} 
       key={item.id}
       amount={item.amount}
       onAdd={addItemHandler.bind(null, item)}
       onRemove={removeItemHandler.bind(null, item.id)}
+      onDelete={deleteItemHandler.bind(null, item.id)}
       />
   );
   return(

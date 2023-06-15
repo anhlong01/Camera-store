@@ -1,31 +1,21 @@
 import './App.css';
-import React from 'react';
-import Header from "./components/Layout/Header";
-import Nav from './components/Layout/Nav';
-import Footer from './components/Layout/Footer';
-import Main from './components/Layout/Main';
-import Cart from './components/Cart/Cart';
-import { useState } from 'react';
+import { React } from 'react';
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import HomePage from './components/Layout/HomePage';
+import Table from './components/UI/Table';
 import CartProvider from './components/store/CartProvider';
 
-function App() {
-  const [cartIsShown, setCartIsShown] = useState(false);
-  const showCartHandler = () =>{
-    setCartIsShown(true);
-  };
-  const hideCartHandler = ()=>{
-    setCartIsShown(false);
-  };
+const router = createBrowserRouter([
+  {path: '/', element: <HomePage/>},
+  {path: '/table', element: <Table/>}
+]);
 
-  return (
-    <CartProvider>
-    <Header/>
-    <Nav onClick={showCartHandler}/>
-    { cartIsShown && <Cart onClose={hideCartHandler}/>}
-    <Main/>
-    <Footer/>
-    </CartProvider>
-  );
+function App() { 
+  return( 
+  <CartProvider>
+    <RouterProvider router={router}/>
+  </CartProvider>
+  )
 }
 
 export default App;

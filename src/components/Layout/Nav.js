@@ -1,6 +1,7 @@
 import { Fragment, useContext } from "react";
 import classes from "./Nav.module.css"
 import CartContext from "../store/Cart-context";
+import {Link} from 'react-router-dom';
 
 const Nav = (props) => {
   const cartCtx = useContext(CartContext);
@@ -26,24 +27,24 @@ const Nav = (props) => {
 
   <ul className="navbar-nav mr-auto ">
     <li className="nav-item active">
-      <a className="nav-link active" href="#home">
+      <div className="nav-link active" >
         Trang chủ
-      </a>
+      </div>
     </li>
     <li className="nav-item">
-      <a className="nav-link" href="#fsale">
+      <div className="nav-link" >
         Flash Sale
-      </a>
+      </div>
     </li>
     <li className="nav-item">
-      <a className="nav-link" href="#hot">
+      <div className="nav-link" >
         Nổi bật
-      </a>
+      </div>
     </li>
     <li className="nav-item">
-      <a className="nav-link" href="#aboutus">
+      <div className="nav-link" >
         About Us
-      </a>
+      </div>
     </li>
     <li className="nav-item" onClick={props.onClick}>
       <button className=" nav-link btn">
@@ -55,15 +56,17 @@ const Nav = (props) => {
     </li>
   </ul>
   
-    <form className="form-inline my-2 my-lg-0">
+    <div className="form-inline my-2 my-lg-0">
      
-      <button className="btn btn-outline-light my-2 my-sm-0 mr-2" type="submit">
-        Đăng ký
+      <button className="btn btn-success my-2 my-sm-0 mr-2" onClick={props.onOpen}>
+        Thêm sản phẩm
       </button>
-      <button className="btn btn-outline-light my-2 my-sm-0" type="submit">
-        Đăng nhập
-      </button>
-    </form>
+      <Link to="/table">
+        <button className="btn btn-danger my-2 my-sm-0">
+          Sửa/Xóa sản phẩm
+        </button>
+      </Link>
+    </div>
   </div>
 </nav>
   </Fragment>

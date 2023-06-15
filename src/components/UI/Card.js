@@ -10,7 +10,7 @@ const Card = (props) =>{
       name: props.title,
       price: props.price,
       amount: 1,
-      img: props.image,
+      image: props.image,
     })
   }
 
@@ -29,7 +29,7 @@ const Card = (props) =>{
       {nf.format(props.price)} đ
     </p>
     <form onSubmit={submitHandler} id={props.id}>
-      <button className="btn btn-primary" >Add to cart</button>
+      <button className="btn btn-primary" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</button>
     </form>
   </div>
 </div>
